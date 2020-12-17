@@ -16,7 +16,7 @@ INSERT INTO vartotojai VALUES('Joshua', 'Jonas', 'Kazlauskas', 'pirkėjas'),
 
 CREATE TABLE vertinimas (
     id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    vartotojo_id VARCHAR(255) UNIQUE,
+    vartotojo_id VARCHAR(255),
     vidurkis FLOAT NOT NULL
 );
 

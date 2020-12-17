@@ -10,7 +10,13 @@ require 'functions.php';
 <div class="row">
     <div class="col text-center">
         <h1>Apklausa</h1>
+<?php
+    if(!isset($_POST['q5'])) {
+?>
         <h6 class="alert-danger p-3">Atsakykite pasirinkdami atsakymą nuo 1 iki 5, kur 1 - labai blogai, o 5 - labai gerai</h6>
+<?php
+    }
+?>
     </div>
 </div>
 <?php
@@ -19,8 +25,11 @@ if(isset($_POST['q5'])) {
     $average = array_sum($_SESSION) / count($_SESSION);
     $query = "INSERT INTO vertinimas(vartotojo_id, vidurkis) VALUES('".$_COOKIE['vartotojas']."', '".$average."');";
     performQuery($query);
-?>  <h1>Jūs įvertinote puslapį: <?php echo $average ?>/<span class="h5">5</span></h1>
-    <button class="btn btn-primary mb-5" onclick="window.location.href='./klausimynas.php'">Grįžti į prekių sąrašą</button>
+?>  
+<div class="col text-center">
+    <h4 class="mt-3">Jūs įvertinote puslapį: <span class="text-success"><?php echo $average ?></span>/<span class="h6">5</span></h4>
+    <button class="btn btn-primary mt-3" onclick="window.location.href='./vidus.php'">Grįžti į prekių sąrašą</button>
+</div>
 <?php
 } else if(isset($_POST['q4'])) {
     $_SESSION['answer4'] = $_POST['answer'];
