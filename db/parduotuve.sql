@@ -16,7 +16,7 @@ INSERT INTO vartotojai VALUES('Joshua', 'Jonas', 'Kazlauskas', 'pirkėjas'),
 
 CREATE TABLE vertinimas (
     id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    vartotojo_id VARCHAR(255) NOT NULL,
+    vartotojo_id VARCHAR(255) UNIQUE,
     vidurkis FLOAT NOT NULL
 );
 
@@ -40,8 +40,8 @@ VALUES
 ('Krepšinio kamuolys', 8.99, 'Laisvalaikio prekė'),
 
 -- STATYBINĖS PREKĖS
-('Paspirtukas', 395.99, 'Laisvalaikio prekė'),
-('Krepšinio kamuolys', 8.99, 'Laisvalaikio prekė');
+('Cementas', 4.15, 'Statybinė prekė'),
+('Putų polisterolas', 21.99, 'Statybinė prekė');
 
 
 INSERT INTO prekes(pavadinimas, kaina, prekes_rusis, maisto_prekes_rusis)
