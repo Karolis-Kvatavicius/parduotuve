@@ -14,7 +14,8 @@ require 'functions.php';
         <h6>Jūs prisijungėte kaip <span class="text-primary"><?php echo $_COOKIE['vartotojas']; ?></span>
         </h6>
         <!-- ATSIJUNGIMAS NUO PASKYROS -->
-        <button class="btn btn-danger m-3 fixed-bottom" onclick="window.location.href='./atsijungti.php'">Atsijungti</button>
+        <button class="btn btn-danger m-3 fixed-bottom" onclick="window.location.href='./atsijungti.php'" 
+        data-toggle="tooltip" data-html="true" title="<p class='text-light'>Išvalyti slapukus ir sunaikinti sesiją.</p>">Atsijungti</button>
 <?php
 if(!empty($_SESSION)) {
 ?>
